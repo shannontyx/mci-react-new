@@ -1,17 +1,24 @@
-import React from 'react'
-import MetricsChart from './MetricsChart';
-import metricsData from '../mci006_data/mci006_metrics_data.json';
-
-import { Helmet } from 'react-helmet'
-
-import './desktop1.css'
-
-const Desktop1 = (props) => {
+import React from 'react' 
+import { useEffect } from 'react'; 
+import MetricsChart from './MetricsChart'; 
+import metricsData from '../mci006_data/mci006_metrics_data.json'; 
+import {Chart, LinearScale, BarController, BarElement, Tooltip, Legend, TimeScale} from "chart.js";  
+import { AdapterDateFns } from 'chartjs-adapter-date-fns'; 
+import { Helmet } from 'react-helmet' 
+import './desktop1.css' 
+ 
+const Desktop1 = (props) => { 
+ 
+  useEffect(() => { 
+    Chart.register(LinearScale, BarController, BarElement, Tooltip, Legend, TimeScale); 
+  }, []);
+  
   return (
     <div className="desktop1-container">
       <Helmet>
         <title>exported project</title>
       </Helmet>
+        
       <div className="desktop1-desktop1">
         <img
           src="/external/rectangle592101-1heq.svg"
@@ -65,17 +72,9 @@ const Desktop1 = (props) => {
           <span>Activity Summary</span>
         </span>
         <div>
-        <h1>Metric Charts</h1>
-        <div>
-          <h2>Cadence</h2>
-          <MetricsChart data={metricsData.cadence} metricName="Cadence" />
+        
+        
         </div>
-        <div>
-          <h2>Step Variability</h2>
-          <MetricsChart data={metricsData.step_variability} metricName="Step Variability" />
-        </div>
-        {/* Add more charts for other metrics if needed */}
-      </div>
         <img
           src="/external/rectangle64218-1k5-200h.png"
           alt="Rectangle64218"
@@ -165,11 +164,18 @@ const Desktop1 = (props) => {
           alt="Rectangle68241"
           className="desktop1-rectangle68"
         />
+        <div className="cadencegraph">
+          <MetricsChart data={metricsData.cadence} metricName="Cadence" />
+        </div>
         <img
           src="/external/rectangle71242-atv.svg"
           alt="Rectangle71242"
           className="desktop1-rectangle71"
         />
+        <div className="copspeedgraph">
+          <MetricsChart data={metricsData.median_cop_speed} metricName="Median COP Speed" />
+        </div>
+        {/* Add more charts for other metrics if needed */}
         <div className="desktop1-group59">
           <img
             src="/external/line9244-145u.svg"
@@ -340,6 +346,9 @@ const Desktop1 = (props) => {
           alt="Rectangle70275"
           className="desktop1-rectangle70"
         />
+        <div className="stepvariabilitygraph">
+          <MetricsChart data={metricsData.step_variability} metricName="Step Variability" />
+        </div>
         <span className="desktop1-text097">
           <span>Gait Variability</span>
         </span>
