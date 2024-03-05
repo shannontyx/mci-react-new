@@ -290,6 +290,7 @@ const Desktop1 = (props) => {
           <span className="desktop1-text093">
             0.10 [m/s] lower than healthy cohort
           </span>
+          
         </span>
         <span className="desktop1-text094">
           <span>
