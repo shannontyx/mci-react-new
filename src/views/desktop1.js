@@ -1,4 +1,6 @@
 import React from 'react'
+import MetricsChart from './MetricsChart';
+import metricsData from '../mci006_data/mci006_metrics_data.json';
 
 import { Helmet } from 'react-helmet'
 
@@ -62,6 +64,18 @@ const Desktop1 = (props) => {
         <span className="desktop1-text024">
           <span>Activity Summary</span>
         </span>
+        <div>
+        <h1>Metric Charts</h1>
+        <div>
+          <h2>Cadence</h2>
+          <MetricsChart data={metricsData.cadence} metricName="Cadence" />
+        </div>
+        <div>
+          <h2>Step Variability</h2>
+          <MetricsChart data={metricsData.step_variability} metricName="Step Variability" />
+        </div>
+        {/* Add more charts for other metrics if needed */}
+      </div>
         <img
           src="/external/rectangle64218-1k5-200h.png"
           alt="Rectangle64218"
