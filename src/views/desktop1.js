@@ -91,6 +91,9 @@ const Desktop1 = (props) => {
           alt="Rectangle65222"
           className="desktop1-rectangle65"
         />
+        <div className="steptimegraph">
+          <MetricsChart data={metricsData.step_time} metricName="Gait Time" />
+        </div>
         <div className="desktop1-group56">
           <img
             src="/external/line9225-zsym.svg"

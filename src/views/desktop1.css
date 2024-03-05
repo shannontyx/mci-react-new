@@ -16,6 +16,15 @@
   height: 200px;
 }
 
+.steptimegraph {
+  top: 363px;
+  left: 210px;
+  position: absolute;
+  z-index: 9999; /* Adjust the z-index value as needed */
+  width: 500px; /* Adjust the width as needed */
+  height: 200px;
+}
+
 .copspeedgraph {
   top: 1200px;
   left: 210px;
