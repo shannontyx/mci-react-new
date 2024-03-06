@@ -1,17 +1,18 @@
-import React from 'react'
-import { useEffect } from 'react'
-import MetricsChart from './MetricsChart'
-import metricsData from '../mci006_data/mci006_metrics_data.json'
-import { Chart, LinearScale, BarController, BarElement, Tooltip, Legend, TimeScale } from 'chart.js'
-import { AdapterDateFns } from 'chartjs-adapter-date-fns'
-import { Helmet } from 'react-helmet'
-import './desktop1.css'
-
-const Desktop1 = (props) => {
-  useEffect(() => {
-    Chart.register(LinearScale, BarController, BarElement, Tooltip, Legend, TimeScale)
-  }, [])
-
+import React from 'react' 
+import { useEffect } from 'react'; 
+import MetricsChart from './MetricsChart'; 
+import metricsData from '../mci006_data/mci006_metrics_data.json'; 
+import {Chart, LinearScale, BarController, BarElement, Tooltip, Legend, TimeScale} from "chart.js";  
+import { AdapterDateFns } from 'chartjs-adapter-date-fns'; 
+import { Helmet } from 'react-helmet' 
+import './desktop1.css' 
+ 
+const Desktop1 = (props) => { 
+ 
+  useEffect(() => { 
+    Chart.register(LinearScale, BarController, BarElement, Tooltip, Legend, TimeScale); 
+  }, []);
+  
   return (
     <div className='desktop1-container'>
       <Helmet>
@@ -26,9 +27,6 @@ const Desktop1 = (props) => {
         />
         <span className='desktop1-text002'>
           <span>Monthly usage</span>
-        <span className="desktop1-text002">
-          <span>Monthly usage
-          </span>
         </span>
         <span className='desktop1-text004'>
           <span>14/30</span>
