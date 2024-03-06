@@ -1,7 +1,8 @@
 // MetricsChart.js
 
-import React from 'react';
-import { Bar } from 'react-chartjs-2';
+import React from 'react'
+import { Bar } from 'react-chartjs-2'
+import 'chartjs-adapter-date-fns'
 
 const MetricsChart = ({ data, metricName }) => {
   const chartData = {
@@ -15,7 +16,7 @@ const MetricsChart = ({ data, metricName }) => {
         borderWidth: 1,
       },
     ],
-  };
+  }
 
   const options = {
     scales: {
@@ -37,8 +38,13 @@ const MetricsChart = ({ data, metricName }) => {
         },
       },
     },
-  };
-  return <Bar data={chartData} options={options} />;
-};
+  }
 
-export default MetricsChart;
+  return (
+    <div>
+      <Bar data={chartData} options={options} />
+    </div>
+  )
+}
+
+export default MetricsChart
