@@ -38,7 +38,6 @@ const MetricsChart = ({ data, metricName }) => {
       },
     },
   };
-
   return <Bar data={chartData} options={options} />;
 };
 

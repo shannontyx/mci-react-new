@@ -26,7 +26,8 @@ const Desktop1 = (props) => {
           className="desktop1-rectangle59"
         />
         <span className="desktop1-text002">
-          <span>Monthly usage</span>
+          <span>Monthly usage
+          </span>
         </span>
         <span className="desktop1-text004">
           <span>14/30</span>
