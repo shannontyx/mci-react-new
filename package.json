@@ -1,11 +1,12 @@
 {
-  "name": "untitled",
+  "name": "flexosense-web-dashboard",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@craco/craco": "^7.0.0-alpha.0",
     "chart.js": "^4.4.2",
     "chartjs-adapter-date-fns": "^3.0.0",
+    "chartjs-plugin-annotation": "^3.0.1",
     "react": "^17.0.2",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^17.0.2",
