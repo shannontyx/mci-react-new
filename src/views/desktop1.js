@@ -3,8 +3,16 @@ import { SidePanel, MetricsChart, ActivitySummary, TopPanel } from '../component
 import { Helmet } from 'react-helmet'
 import './desktop1.css'
 import metricsData from '../data/mci006.json'
+import * as utils from '../utils/helperFunctions'
 
 const Desktop1 = props => {
+  const daysActive = utils.calculateDaysActive(metricsData.total_activity)
+  const averagePerDay = utils.calculateAverageTime(metricsData.total_activity)
+  const medianGaitTime = utils.calculateMedian(metricsData.stride_time)
+  const medianVariability = utils.calculateMedian(metricsData.stride_variability)
+  const medianCadence = utils.calculateMedian(metricsData.cadence)
+  const medianSpeed = utils.calculateMedian(metricsData.median_cop_speed)
+
   return (
     <div className='desktop1-container'>
       <Helmet>
@@ -18,7 +26,7 @@ const Desktop1 = props => {
           className="desktop1-rectangle63"
         /> */}
         <TopPanel />
-        <ActivitySummary />
+        <ActivitySummary daysActive={`${daysActive} days`} avgUse={`${averagePerDay} min`} />
         {/* --------------------------------- Gait Time --------------------------------- */}
         <span className='desktop1-text028'>
           <span>Gait Time</span>
@@ -42,13 +50,13 @@ const Desktop1 = props => {
           </span>
         </div>
         <span className='desktop1-text034'>
-          <span className='desktop1-text035'>1.66</span>
+          <span className='desktop1-text035'>{medianGaitTime.toFixed(2)}</span>
           <span className='desktop1-text036'>[s]</span>
         </span>
         <span className='desktop1-text037'>
           <span>Median Gait Time</span>
           <br></br>
-          <span>(monthly)</span>
+          <span>(time period)</span>
         </span>
         <span className='desktop1-text041'>
           <span>
@@ -114,14 +122,14 @@ const Desktop1 = props => {
           </span>
         </div>
         <span className='desktop1-text055'>
-          <span className='desktop1-text056'>76</span>
+          <span className='desktop1-text056'>{medianCadence.toFixed(0)}</span>
           <span className='desktop1-text057'>[steps/min]</span>
         </span>
         <span className='desktop1-text058'>
           <span>
             <span>Median Cadence</span>
             <br></br>
-            <span>(monthly)</span>
+            <span>(time period)</span>
           </span>
         </span>
         <span className='desktop1-text063'>
@@ -186,7 +194,7 @@ const Desktop1 = props => {
           </span>
         </div>
         <span className='desktop1-text083'>
-          <span className='desktop1-text084'>1.21</span>
+          <span className='desktop1-text084'>{medianSpeed.toFixed(2)}</span>
           <span className='desktop1-text085'>
             <span
               dangerouslySetInnerHTML={{
@@ -199,7 +207,7 @@ const Desktop1 = props => {
         <span className='desktop1-text087'>
           <span>Median COP Speed</span>
           <br></br>
-          <span>(monthly)</span>
+          <span>(time period)</span>
         </span>
         <span className='desktop1-text091'>
           <span>
@@ -256,14 +264,14 @@ const Desktop1 = props => {
           </span>
         </div>
         <span className='desktop1-text103'>
-          <span className='desktop1-text104'>1.32</span>
-          <span className='desktop1-text105'>[m/s]</span>
+          <span className='desktop1-text104'>{medianVariability.toFixed(2)}</span>
+          {/* <span className='desktop1-text105'>[m/s]</span> */}
         </span>
 
         <span className='desktop1-text110'>
           <span>Median Gait Variability</span>
           <br></br>
-          <span>(monthly)</span>
+          <span>(time period)</span>
         </span>
         <span className='desktop1-text114'>
           <span className='desktop1-text115'>
@@ -327,24 +335,6 @@ const Desktop1 = props => {
         /* ------------------------------------------------------------------------------------ */}
 
         <SidePanel />
-        <img src='/external/vector650-ulld.svg' alt='Vector650' className='desktop1-vector07' />
-        <span className='desktop1-text161'>
-          <span>6.5</span>
-        </span>
-        <img src='/external/vector640-o3ag.svg' alt='Vector640' className='desktop1-vector08' />
-        <span className='desktop1-text163'>
-          <span>14/30</span>
-        </span>
-        <img src='/external/vector8189-ho3d.svg' alt='Vector8189' className='desktop1-vector09' />
-        <span className='desktop1-text165'>
-          <span>
-            <span
-              dangerouslySetInnerHTML={{
-                __html: ' ',
-              }}
-            />
-          </span>
-        </span>
       </div>
     </div>
   )

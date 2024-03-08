@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ActivitySummary = () => {
+const ActivitySummary = ({ daysActive, avgUse }) => {
   return (
     <div>
       <span className='desktop1-text024'>
@@ -73,6 +73,24 @@ const ActivitySummary = () => {
       />
       <span className='desktop1-text026'>
         <span>Generate report</span>
+      </span>
+      <img src='/external/vector650-ulld.svg' alt='Vector650' className='desktop1-vector07' />
+      <span className='desktop1-text161'>
+        <span>{avgUse}</span>
+      </span>
+      <img src='/external/vector640-o3ag.svg' alt='Vector640' className='desktop1-vector08' />
+      <span className='desktop1-text163'>
+        <span>{daysActive}</span>
+      </span>
+      <img src='/external/vector8189-ho3d.svg' alt='Vector8189' className='desktop1-vector09' />
+      <span className='desktop1-text165'>
+        <span>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: ' ',
+            }}
+          />
+        </span>
       </span>
     </div>
   )

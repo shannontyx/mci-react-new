@@ -36,9 +36,8 @@ const MetricsChart = ({ data, metricName, cohortMedian }) => {
   }
 
   const options = {
-    legend: {
-      display: false,
-    },
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       x: {
         type: 'time',
@@ -46,7 +45,7 @@ const MetricsChart = ({ data, metricName, cohortMedian }) => {
           unit: 'day',
         },
         title: {
-          display: true,
+          display: false,
           text: 'Date',
         },
       },
@@ -60,6 +59,9 @@ const MetricsChart = ({ data, metricName, cohortMedian }) => {
       },
     },
     plugins: {
+      legend: {
+        display: false,
+      },
       annotation: {
         annotations: {
           line1: {
@@ -69,6 +71,7 @@ const MetricsChart = ({ data, metricName, cohortMedian }) => {
             value: constantObject.cohortMedian, // <----------------- The cohort median
             borderColor: 'red',
             borderWidth: 1,
+            borderDash: [5, 5],
           },
           line2: {
             type: 'line',
@@ -77,6 +80,7 @@ const MetricsChart = ({ data, metricName, cohortMedian }) => {
             value: subjectMedian, // <----------------- The subject median
             borderColor: 'green',
             borderWidth: 1,
+            borderDash: [5, 5],
           },
           area: {
             type: 'box',
@@ -93,7 +97,7 @@ const MetricsChart = ({ data, metricName, cohortMedian }) => {
 
   return (
     <div>
-      <Bar data={chartData} options={options} />
+      <Bar data={chartData} options={options} width={600} height={200} />
     </div>
   )
 }

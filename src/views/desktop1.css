@@ -5,8 +5,6 @@
   left: 210px;
   position: absolute;
   z-index: 9999; /* Adjust the z-index value as needed */
-  width: 500px; /* Adjust the width as needed */
-  height: 200px; /* Adjust the height as needed */
 }
 
 .stepvariabilitygraph {
@@ -14,8 +12,6 @@
   left: 210px;
   position: absolute;
   z-index: 9999; /* Adjust the z-index value as needed */
-  width: 500px; /* Adjust the width as needed */
-  height: 200px;
 }
 
 .steptimegraph {
@@ -23,8 +19,6 @@
   left: 210px;
   position: absolute;
   z-index: 9999; /* Adjust the z-index value as needed */
-  width: 500px; /* Adjust the width as needed */
-  height: 20px;
 }
 
 .copspeedgraph {
@@ -32,8 +26,6 @@
   left: 210px;
   position: absolute;
   z-index: 9999; /* Adjust the z-index value as needed */
-  width: 500px; /* Adjust the width as needed */
-  height: 200px;
 }
 
 .desktop1-container {
@@ -736,9 +728,9 @@
 }
 .desktop1-text083 {
   top: 1248.7764892578125px;
-  left: 984.4595336914062px;
+  left: 970px;
   color: rgb(53, 53, 53);
-  width: 136px;
+  width: 160px;
   height: auto;
   position: absolute;
   font-size: 38.9779px;
@@ -1180,13 +1172,13 @@
   position: absolute;
 }
 .desktop1-text135 {
-  top: 271.1404724121094px;
-  left: 569.5089111328125px;
+  top: 270px;
+  left: 520px;
   color: rgba(53, 53, 53, 1);
-  width: 222px;
+  width: 250px;
   height: auto;
   position: absolute;
-  font-size: 7.3331990242004395px;
+  font-size: 12px;
   font-style: SemiBold;
   text-align: left;
   font-family: Poppins;
@@ -1196,13 +1188,13 @@
   text-decoration: none;
 }
 .desktop1-text137 {
-  top: 153.55718994140625px;
-  left: 592.8956298828125px;
+  top: 150px;
+  left: 575px;
   color: rgba(53, 53, 53, 1);
-  width: 95px;
+  width: 120px;
   height: auto;
   position: absolute;
-  font-size: 10.153660774230957px;
+  font-size: 13px;
   font-style: SemiBold;
   text-align: left;
   font-family: Poppins;
@@ -1219,13 +1211,13 @@
   position: absolute;
 }
 .desktop1-text139 {
-  top: 153.55718994140625px;
-  left: 272.37591552734375px;
+  top: 153px;
+  left: 266px;
   color: rgba(53, 53, 53, 1);
-  width: 79px;
+  width: 100px;
   height: auto;
   position: absolute;
-  font-size: 12px;
+  font-size: 13px;
   font-style: SemiBold;
   text-align: left;
   font-family: Poppins;
@@ -1235,8 +1227,8 @@
   text-decoration: none;
 }
 .desktop1-text141 {
-  top: 272.5806884765625px;
-  left: 250.94039916992188px;
+  top: 272px;
+  left: 225px;
   color: rgba(53, 53, 53, 1);
   width: 221px;
   height: auto;
@@ -1544,20 +1536,20 @@
   position: absolute;
 }
 .desktop1-vector07 {
-  top: 166.81614685058594px;
-  left: 582.4999389648438px;
-  width: 108px;
-  height: 104px;
+  top: 170px;
+  left: 590px;
+  width: 94px;
+  height: 94px;
   position: absolute;
 }
 .desktop1-text161 {
-  top: 201.8475341796875px;
-  left: 615px;
+  top: 200px;
+  left: 575px;
   color: rgba(53, 53, 53, 1);
-  width: 49px;
+  width: 200px;
   height: auto;
   position: absolute;
-  font-size: 28.35874366760254px;
+  font-size: 26px;
   font-style: Bold;
   text-align: left;
   font-family: Poppins;
@@ -1567,17 +1559,17 @@
   text-decoration: none;
 }
 .desktop1-vector08 {
-  top: 167.6502227783203px;
-  left: 257.4999694824219px;
-  width: 108px;
-  height: 105px;
+  top: 170px;
+  left: 270px;
+  width: 94px;
+  height: 94px;
   position: absolute;
 }
 .desktop1-text163 {
-  top: 207.3494873046875px;
-  left: 282.223388671875px;
+  top: 200px;
+  left: 280px;
   color: rgba(53, 53, 53, 1);
-  width: 82px;
+  width: 100px;
   height: auto;
   position: absolute;
   font-size: 22.563688278198242px;
