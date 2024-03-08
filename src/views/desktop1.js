@@ -1,18 +1,18 @@
-import React from 'react' 
-import { useEffect } from 'react'; 
-import MetricsChart from './MetricsChart'; 
-import metricsData from '../mci006_data/mci006_metrics_data.json'; 
-import {Chart, LinearScale, BarController, BarElement, Tooltip, Legend, TimeScale} from "chart.js";  
-import { AdapterDateFns } from 'chartjs-adapter-date-fns'; 
-import { Helmet } from 'react-helmet' 
-import './desktop1.css' 
- 
-const Desktop1 = (props) => { 
- 
-  useEffect(() => { 
-    Chart.register(LinearScale, BarController, BarElement, Tooltip, Legend, TimeScale); 
-  }, []);
-  
+import React from 'react'
+import { SidePanel, MetricsChart, ActivitySummary, TopPanel } from '../components' // Import Components
+import { Helmet } from 'react-helmet'
+import './desktop1.css'
+import metricsData from '../data/mci006.json'
+import * as utils from '../utils/helperFunctions'
+
+const Desktop1 = props => {
+  const daysActive = utils.calculateDaysActive(metricsData.total_activity)
+  const averagePerDay = utils.calculateAverageTime(metricsData.total_activity)
+  const medianGaitTime = utils.calculateMedian(metricsData.stride_time)
+  const medianVariability = utils.calculateMedian(metricsData.stride_variability)
+  const medianCadence = utils.calculateMedian(metricsData.cadence)
+  const medianSpeed = utils.calculateMedian(metricsData.median_cop_speed)
+
   return (
     <div className='desktop1-container'>
       <Helmet>
@@ -20,66 +20,14 @@ const Desktop1 = (props) => {
       </Helmet>
 
       <div className='desktop1-desktop1'>
-        <img
-          src='/external/rectangle592101-1heq.svg'
-          alt='Rectangle592101'
-          className='desktop1-rectangle59'
-        />
-        <span className='desktop1-text002'>
-          <span>Monthly usage</span>
-        </span>
-        <span className='desktop1-text004'>
-          <span>14/30</span>
-        </span>
-        <span className='desktop1-text008'>
-          <span>Monthly usage</span>
-        </span>
-        <span className='desktop1-text010'>
-          <span>14/30</span>
-        </span>
         {/* <img
           src="/external/rectangle63210-r9.svg"
           alt="Rectangle63210"
           className="desktop1-rectangle63"
         /> */}
-        <div className='desktop1-header'></div>
-        <span className='desktop1-text012'>
-          <span>Patient Name</span>
-        </span>
-        <span className='desktop1-text014'>
-          <span>Patient ID</span>
-        </span>
-        <span className='desktop1-text016'>
-          <span>Subject X</span>
-        </span>
-        <span className='desktop1-text018'>
-          <span>0012345</span>
-        </span>
-        <span className='desktop1-text020'>
-          <span>
-            Select Dates &gt;
-            <span
-              dangerouslySetInnerHTML={{
-                __html: ' ',
-              }}
-            />
-          </span>
-        </span>
-        <span className='desktop1-text022'>
-          <span>01/01/2024 - 30/01/2024</span>
-        </span>
-        <span className='desktop1-text024'>
-          <span>Activity Summary</span>
-        </span>
-        <div></div>
-        <img
-          src='/external/rectangle64218-1k5-200h.png'
-          alt='Rectangle64218'
-          className='desktop1-rectangle64'
-        />
-        <span className='desktop1-text026'>
-          <span>Generate report</span>
-        </span>
+        <TopPanel />
+        <ActivitySummary daysActive={`${daysActive} days`} avgUse={`${averagePerDay} min`} />
+        {/* --------------------------------- Gait Time --------------------------------- */}
         <span className='desktop1-text028'>
           <span>Gait Time</span>
         </span>
@@ -89,7 +37,7 @@ const Desktop1 = (props) => {
           className='desktop1-rectangle65'
         />
         <div className='steptimegraph'>
-          <MetricsChart data={metricsData.step_time} metricName='Gait Time' />
+          <MetricsChart data={metricsData.stride_time} metricName='Gait Time' />
         </div>
         <div className='desktop1-group56'>
           <img src='/external/line9225-zsym.svg' alt='Line9225' className='desktop1-line9' />
@@ -102,13 +50,13 @@ const Desktop1 = (props) => {
           </span>
         </div>
         <span className='desktop1-text034'>
-          <span className='desktop1-text035'>1.66</span>
+          <span className='desktop1-text035'>{medianGaitTime.toFixed(2)}</span>
           <span className='desktop1-text036'>[s]</span>
         </span>
         <span className='desktop1-text037'>
           <span>Median Gait Time</span>
           <br></br>
-          <span>(monthly)</span>
+          <span>(time period)</span>
         </span>
         <span className='desktop1-text041'>
           <span>
@@ -141,6 +89,7 @@ const Desktop1 = (props) => {
             className='desktop1-lucidearrowup1'
           />
         </div>
+        {/* --------------------------------- End Gait Time --------------------------------- */}
         <img src='/external/line11239-vk79.svg' alt='Line11239' className='desktop1-line11' />
         <span className='desktop1-text049'>
           <span>Cadence</span>
@@ -173,14 +122,14 @@ const Desktop1 = (props) => {
           </span>
         </div>
         <span className='desktop1-text055'>
-          <span className='desktop1-text056'>76</span>
+          <span className='desktop1-text056'>{medianCadence.toFixed(0)}</span>
           <span className='desktop1-text057'>[steps/min]</span>
         </span>
         <span className='desktop1-text058'>
           <span>
             <span>Median Cadence</span>
             <br></br>
-            <span>(monthly)</span>
+            <span>(time period)</span>
           </span>
         </span>
         <span className='desktop1-text063'>
@@ -245,7 +194,7 @@ const Desktop1 = (props) => {
           </span>
         </div>
         <span className='desktop1-text083'>
-          <span className='desktop1-text084'>1.21</span>
+          <span className='desktop1-text084'>{medianSpeed.toFixed(2)}</span>
           <span className='desktop1-text085'>
             <span
               dangerouslySetInnerHTML={{
@@ -258,7 +207,7 @@ const Desktop1 = (props) => {
         <span className='desktop1-text087'>
           <span>Median COP Speed</span>
           <br></br>
-          <span>(monthly)</span>
+          <span>(time period)</span>
         </span>
         <span className='desktop1-text091'>
           <span>
@@ -315,14 +264,14 @@ const Desktop1 = (props) => {
           </span>
         </div>
         <span className='desktop1-text103'>
-          <span className='desktop1-text104'>1.32</span>
-          <span className='desktop1-text105'>[m/s]</span>
+          <span className='desktop1-text104'>{medianVariability.toFixed(2)}</span>
+          {/* <span className='desktop1-text105'>[m/s]</span> */}
         </span>
 
         <span className='desktop1-text110'>
           <span>Median Gait Variability</span>
           <br></br>
-          <span>(monthly)</span>
+          <span>(time period)</span>
         </span>
         <span className='desktop1-text114'>
           <span className='desktop1-text115'>
@@ -381,111 +330,11 @@ const Desktop1 = (props) => {
           <span>Subject X Gait Time Average Per Day</span>
         </span>
 
-        <img
-          src='/external/rectangle602102-mlpd-200h.png'
-          alt='Rectangle602102'
-          className='desktop1-rectangle60'
-        />
-        <span className='desktop1-text135'>
-          <span>Average hours insole is in use each day</span>
-        </span>
-        <span className='desktop1-text137'>
-          <span>Average Daily Use</span>
-        </span>
-        <img
-          src='/external/rectangle622107-twc-200h.png'
-          alt='Rectangle622107'
-          className='desktop1-rectangle62'
-        />
-        <span className='desktop1-text139'>
-          <span>Monthly Usage</span>
-        </span>
-        <span className='desktop1-text141'>
-          <span>Number of days insole was active</span>
-        </span>
-        <img
-          src='/external/rectangle272116-rpzk-200w.png'
-          alt='Rectangle272116'
-          className='desktop1-rectangle27'
-        />
-        <img src='/external/vector649-8p7p.svg' alt='Vector649' className='desktop1-vector' />
-        <div className='desktop1-group71'>
-          <span className='desktop1-text143'>
-            <span>Time spend per activity</span>
-          </span>
-          <span className='desktop1-text145'>
-            <span>View Activity &gt;</span>
-          </span>
-        </div>
-        <img
-          src='/external/screenshot20240122014303removebgpreview565-llpg-200h.png'
-          alt='Screenshot20240122014303removebgpreview565'
-          className='desktop1-screenshot20240122014303removebgpreview5'
-        />
-        <div className='desktop1-group72'>
-          <img src='/external/vector67-cb4.svg' alt='Vector67' className='desktop1-vector01' />
-          <span className='desktop1-text147'>
-            <span>Dashboard</span>
-          </span>
-        </div>
-        <div className='desktop1-group73'>
-          <img
-            src='/external/bipeople610-ix7p.svg'
-            alt='bipeople610'
-            className='desktop1-bipeople'
-          />
-          <span className='desktop1-text149'>
-            <span>Patients</span>
-          </span>
-        </div>
-        <div className='desktop1-group74'>
-          <img src='/external/vector614-v15.svg' alt='Vector614' className='desktop1-vector02' />
-          <span className='desktop1-text151'>
-            <span>Account</span>
-          </span>
-        </div>
-        <div className='desktop1-group75'>
-          <img src='/external/vector617-n7b5.svg' alt='Vector617' className='desktop1-vector03' />
-          <span className='desktop1-text153'>
-            <span>Settings</span>
-          </span>
-        </div>
-        <div className='desktop1-group76'>
-          <img src='/external/vector620-45ew.svg' alt='Vector620' className='desktop1-vector04' />
-          <span className='desktop1-text155'>
-            <span>Schedule</span>
-          </span>
-        </div>
-        <div className='desktop1-group77'>
-          <span className='desktop1-text157'>
-            <span>Back</span>
-          </span>
-          <img src='/external/vector624-d2bi.svg' alt='Vector624' className='desktop1-vector05' />
-          <div className='desktop1-group7'>
-            <span className='desktop1-text159'>
-              <span>Help</span>
-            </span>
-          </div>
-        </div>
-        <img src='/external/vector627-d2kj.svg' alt='Vector627' className='desktop1-vector06' />
-        <img src='/external/vector650-ulld.svg' alt='Vector650' className='desktop1-vector07' />
-        <span className='desktop1-text161'>
-          <span>6.5</span>
-        </span>
-        <img src='/external/vector640-o3ag.svg' alt='Vector640' className='desktop1-vector08' />
-        <span className='desktop1-text163'>
-          <span>14/30</span>
-        </span>
-        <img src='/external/vector8189-ho3d.svg' alt='Vector8189' className='desktop1-vector09' />
-        <span className='desktop1-text165'>
-          <span>
-            <span
-              dangerouslySetInnerHTML={{
-                __html: ' ',
-              }}
-            />
-          </span>
-        </span>
+        {/* ------------------------------------------------------------------------------------ */
+        /*                                      SidePannel                                      */
+        /* ------------------------------------------------------------------------------------ */}
+
+        <SidePanel />
       </div>
     </div>
   )
