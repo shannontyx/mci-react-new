@@ -2,52 +2,34 @@
 
 const patientsData = [
     {
-      name: 'Alice Johnson',
-      id: 123456,
+      id: 'mci006',
       gender: 'Female',
       riskLevel: 'Healthy',
-      lastVisit: '2024-03-05',
-      nextVisit: '2024-04-05'
     },
     {
-      name: 'Bob Smith',
-      id: 234567,
+      id: 'mci001',
       gender: 'Male',
-      riskLevel: 'Unhealthy',
-      lastVisit: '2024-02-20',
-      nextVisit: '2024-03-20'
+      riskLevel: 'Unhealthy'
     },
     {
-      name: 'Eve Brown',
-      id: 345678,
+      id: 'mci008',
       gender: 'Female',
-      riskLevel: 'Healthy',
-      lastVisit: '2024-02-15',
-      nextVisit: '2024-03-15'
+      riskLevel: 'Healthy'     
     },
     {
-      name: 'Michael Davis',
-      id: 456789,
+      id: 'mci009',
       gender: 'Male',
-      riskLevel: 'Healthy',
-      lastVisit: '2024-02-28',
-      nextVisit: '2024-03-28'
+      riskLevel: 'Healthy',      
     },
     {
-      name: 'Grace Wilson',
-      id: 567890,
+      id: 'mci010',
       gender: 'Female',
-      riskLevel: 'Unhealthy',
-      lastVisit: '2024-03-08',
-      nextVisit: '2024-04-08'
+      riskLevel: 'Unhealthy',      
     },
     {
-      name: 'Daniel Lee',
-      id: 678901,
+      id: 'mci004',
       gender: 'Male',
-      riskLevel: 'Unhealthy',
-      lastVisit: '2024-02-25',
-      nextVisit: '2024-03-25'
+      riskLevel: 'Unhealthy',      
     }
   ];
   

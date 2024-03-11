@@ -36,15 +36,29 @@
   }
 
   /* Conditional styling based on riskLevel */
-.patient-table tbody td:nth-child(4) {
-  font-weight: bold;
-}
 
-.patient-table tbody td:nth-child(4)[data-risklevel="Healthy"] {
-  color: green;
-}
+  .patient-table tbody td:nth-child(1) {
+    width: 25%; /* Adjust the width as needed */
+  }
 
-.patient-table tbody td:nth-child(4)[data-risklevel="Unhealthy"] {
-  color: red;
-}
-  
+  .patient-table tbody td:nth-child(2) {
+    width: 25%; /* Adjust the width as needed */
+  }
+
+  .patient-table tbody td:nth-child(3) {
+    width: 25%; /* Adjust the width as needed */
+    font-weight: bold;
+  }
+
+  .patient-table tbody td:nth-child(4) {
+    width: 25%; /* Adjust the width as needed */
+  }
+
+  .patient-table tbody td:nth-child(3)[data-risklevel="Healthy"] {
+    color: green;
+  }
+
+  .patient-table tbody td:nth-child(3)[data-risklevel="Unhealthy"] {
+    color: red;
+  }
+    
