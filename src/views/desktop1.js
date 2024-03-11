@@ -9,9 +9,9 @@ import metricsDataUnhealthy from '../data/mci001.json'
 const Desktop1 = props => {
   //let metricsnew = metricsData;
   let metricsUpdated;
-  if (props.metricsData == 'metricsData') {
+  if (props.metricsData === 'metricsData') {
     metricsUpdated = metricsData;
-  } else if (props.metricsData == 'metricsDataUnhealthy') {
+  } else if (props.metricsData === 'metricsDataUnhealthy') {
     metricsUpdated = metricsDataUnhealthy;
   } else {
     metricsUpdated = metricsData;
