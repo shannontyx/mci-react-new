@@ -1,6 +1,13 @@
 import React from 'react'
+import { useHistory } from "react-router-dom";
 
 const SidePanel = () => {
+  const history = useHistory();
+
+  const handlePatientPage = () => {
+    history.push('/');
+  }
+
   return (
     <div className='side-panel'>
       {/* SidePannel Immage Background*/}
@@ -16,13 +23,17 @@ const SidePanel = () => {
         className='desktop1-screenshot20240122014303removebgpreview5'
       />
       <div className='desktop1-group72'>
-        <img src='/external/vector67-cb4.svg' alt='Vector67' className='desktop1-vector01' />
+        <img src='/external/vector67-cb4.svg' alt='Vector67' className='desktop1-vector01'/>
         <span className='desktop1-text147'>
           <span>Dashboard</span>
         </span>
       </div>
       <div className='desktop1-group73'>
-        <img src='/external/bipeople610-ix7p.svg' alt='bipeople610' className='desktop1-bipeople' />
+        <img src='/external/bipeople610-ix7p.svg' alt='bipeople610' className='desktop1-bipeople' onClick={handlePatientPage}
+        style={{ width: '37px', height: '37px', transition: 'width 0.3s, height 0.3s', display: 'inline-block' }}
+        onMouseOver={(event) => { event.target.style.width = '41px'; event.target.style.height = '41px'; }}
+        onMouseOut={(event) => { event.target.style.width = '37px'; event.target.style.height = '37px'; }}
+        />
         <span className='desktop1-text149'>
           <span>Patients</span>
         </span>

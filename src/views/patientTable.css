@@ -1,0 +1,50 @@
+.patient-table-container {
+    margin: 20px;
+  }
+  
+  .patient-table {
+    width: 90%;
+    border-collapse: collapse;
+  }
+  
+  .patient-table th,
+  .patient-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .patient-table th {
+    background-color: #7ea2b8;
+    color: white;
+  }
+  
+  .patient-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .view-dashboard-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .view-dashboard-btn:hover {
+    background-color: #99b7cb;
+  }
+
+  /* Conditional styling based on riskLevel */
+.patient-table tbody td:nth-child(4) {
+  font-weight: bold;
+}
+
+.patient-table tbody td:nth-child(4)[data-risklevel="Healthy"] {
+  color: green;
+}
+
+.patient-table tbody td:nth-child(4)[data-risklevel="Unhealthy"] {
+  color: red;
+}
+  

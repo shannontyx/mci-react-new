@@ -2,16 +2,27 @@ import React from 'react'
 import { SidePanel, MetricsChart, ActivitySummary, TopPanel } from '../components' // Import Components
 import { Helmet } from 'react-helmet'
 import './desktop1.css'
-import metricsData from '../data/mci006.json'
 import * as utils from '../utils/helperFunctions'
+import metricsData from '../data/mci006.json'
+import metricsDataUnhealthy from '../data/mci001.json'
 
 const Desktop1 = props => {
-  const daysActive = utils.calculateDaysActive(metricsData.total_activity)
-  const averagePerDay = utils.calculateAverageTime(metricsData.total_activity)
-  const medianGaitTime = utils.calculateMedian(metricsData.stride_time)
-  const medianVariability = utils.calculateMedian(metricsData.stride_variability)
-  const medianCadence = utils.calculateMedian(metricsData.cadence)
-  const medianSpeed = utils.calculateMedian(metricsData.median_cop_speed)
+  //let metricsnew = metricsData;
+  let metricsUpdated;
+  if (props.metricsData == 'metricsData') {
+    metricsUpdated = metricsData;
+  } else if (props.metricsData == 'metricsDataUnhealthy') {
+    metricsUpdated = metricsDataUnhealthy;
+  } else {
+    metricsUpdated = metricsData;
+  }
+
+  const daysActive = utils.calculateDaysActive(metricsUpdated.total_activity)
+  const averagePerDay = utils.calculateAverageTime(metricsUpdated.total_activity)
+  const medianGaitTime = utils.calculateMedian(metricsUpdated.stride_time)
+  const medianVariability = utils.calculateMedian(metricsUpdated.stride_variability)
+  const medianCadence = utils.calculateMedian(metricsUpdated.cadence)
+  const medianSpeed = utils.calculateMedian(metricsUpdated.median_cop_speed)
 
   return (
     <div className='desktop1-container'>
@@ -70,9 +81,8 @@ const Desktop1 = props => {
         </span>
         <span className='desktop1-text044'>
           <span>
-            <span> 0.12 [s] lower than previous period</span>
-            <br></br>
-            <span>(moving closer to healthy cohort)</span>
+            {/*<br></br>
+            <span>(moving closer to healthy cohort)</span>*/}
           </span>
         </span>
         <div className='desktop1-group57'>
@@ -160,9 +170,9 @@ const Desktop1 = props => {
         </span>
         <span className='desktop1-text072'>
           <span>
-            <span> 2 steps lower than previous period</span>
+            {/*<span> 2 steps lower than previous period</span>
             <br></br>
-            <span>(moving further from healthy cohort)</span>
+            <span>(moving further from healthy cohort)</span>*/}
           </span>
         </span>
         <div className='desktop1-group60'>
@@ -217,6 +227,7 @@ const Desktop1 = props => {
               }}
             />
           </span>
+          {/*
           <span className='desktop1-text093'>0.10 [m/s] lower than healthy cohort</span>
         </span>
         <span className='desktop1-text094'>
@@ -227,7 +238,7 @@ const Desktop1 = props => {
               }}
             />
           </span>
-          <span className='desktop1-text096'>Remained constant from previous period</span>
+            <span className='desktop1-text096'>Remained constant from previous period</span>*/}
         </span>
         <div className='desktop1-group63'>
           <img
@@ -294,9 +305,9 @@ const Desktop1 = props => {
         </span>
         <span className='desktop1-text122'>
           <span>
-            <span> 0.21 [m/s] higher than previous period</span>
+            {/*<span> 0.21 [m/s] higher than previous period</span>
             <br></br>
-            <span>(moving further from healthy cohort)</span>
+            <span>(moving further from healthy cohort)</span>*/}
           </span>
         </span>
         <div className='desktop1-group26'>
