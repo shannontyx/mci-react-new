@@ -3,19 +3,13 @@ import { SidePanel, MetricsChart, ActivitySummary, TopPanel } from '../component
 import { Helmet } from 'react-helmet'
 import './desktop1.css'
 import * as utils from '../utils/helperFunctions'
-import metricsData from '../data/mci006.json'
-import metricsDataUnhealthy from '../data/mci001.json'
+// import metricsData from '../data/mci006.json'
+// import metricsDataUnhealthy from '../data/mci001.json'
 
 const Desktop1 = props => {
+  
   //let metricsnew = metricsData;
-  let metricsUpdated;
-  if (props.metricsData === 'metricsData') {
-    metricsUpdated = metricsData;
-  } else if (props.metricsData === 'metricsDataUnhealthy') {
-    metricsUpdated = metricsDataUnhealthy;
-  } else {
-    metricsUpdated = metricsData;
-  }
+  const metricsUpdated = props.metricsData === metricsData ? metricsData : metricsDataUnhealthy;
 
   const daysActive = utils.calculateDaysActive(metricsUpdated.total_activity)
   const averagePerDay = utils.calculateAverageTime(metricsUpdated.total_activity)

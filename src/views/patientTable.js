@@ -8,12 +8,10 @@ const PatientTable = ( {patients} ) => {
   const history = useHistory();
 
   const handleViewDashboard = (patient, index) => {
-    if (index === 0) {
-      history.push({ pathname: '/dashboard', state: { metricsData: 'metricsData' } });
-    } else if (index === 1) {
-      history.push({ pathname: '/dashboard', state: { metricsData: 'metricsDataUnhealthy' } });
-    }
+    const selectedMetricsData = index === 0 ? metricsData : metricsDataUnhealthy;
+    history.push({ pathname: '/dashboard', state: { metricsData: selectedMetricsData } });
   }
+  
 
   return (
     <div className="patient-table-container">
