@@ -1,3 +1,3 @@
-import { findMedian } from './helperFunctions'
+import { calculateMedian } from './helperFunctions'
 
-export { findMedian }
+export { calculateMedian }

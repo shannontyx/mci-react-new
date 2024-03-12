@@ -3,21 +3,17 @@ import { SidePanel, MetricsChart, ActivitySummary, TopPanel } from '../component
 import { Helmet } from 'react-helmet'
 import './desktop1.css'
 import * as utils from '../utils/helperFunctions'
-import metricsData from '../data/mci006.json'
-import metricsDataUnhealthy from '../data/mci001.json'
 
 const Desktop1 = props => {
-  
-  //let metricsnew = metricsData;
-  const metricsUpdated = props.metricsData === metricsData ? metricsData : metricsDataUnhealthy;
-  // ALWAYS FALSE, CANNOT DEFINE props.metricsData
+  const { patientData } = props.location.state
+  const metricsData = patientData.patientMetricsData
 
-  const daysActive = utils.calculateDaysActive(metricsUpdated.total_activity)
-  const averagePerDay = utils.calculateAverageTime(metricsUpdated.total_activity)
-  const medianGaitTime = utils.calculateMedian(metricsUpdated.stride_time)
-  const medianVariability = utils.calculateMedian(metricsUpdated.stride_variability)
-  const medianCadence = utils.calculateMedian(metricsUpdated.cadence)
-  const medianSpeed = utils.calculateMedian(metricsUpdated.median_cop_speed)
+  const daysActive = utils.calculateDaysActive(metricsData.total_activity)
+  const averagePerDay = utils.calculateAverageTime(metricsData.total_activity)
+  const medianGaitTime = utils.calculateMedian(metricsData.stride_time)
+  const medianVariability = utils.calculateMedian(metricsData.stride_variability)
+  const medianCadence = utils.calculateMedian(metricsData.cadence)
+  const medianSpeed = utils.calculateMedian(metricsData.median_cop_speed)
 
   return (
     <div className='desktop1-container'>
@@ -31,7 +27,7 @@ const Desktop1 = props => {
           alt="Rectangle63210"
           className="desktop1-rectangle63"
         /> */}
-        <TopPanel />
+        <TopPanel patientId={patientData.id} />
         <ActivitySummary daysActive={`${daysActive} days`} avgUse={`${averagePerDay} min`} />
         {/* --------------------------------- Gait Time --------------------------------- */}
         <span className='desktop1-text028'>
@@ -43,7 +39,11 @@ const Desktop1 = props => {
           className='desktop1-rectangle65'
         />
         <div className='steptimegraph'>
-          <MetricsChart data={metricsData.stride_time} metricName='Gait Time' />
+          <MetricsChart
+            data={metricsData.stride_time}
+            metricName='Gait Time'
+            yLabel='Gait Time [sec]'
+          />
         </div>
         <div className='desktop1-group56'>
           <img src='/external/line9225-zsym.svg' alt='Line9225' className='desktop1-line9' />
@@ -105,7 +105,7 @@ const Desktop1 = props => {
           className='desktop1-rectangle68'
         />
         <div className='cadencegraph'>
-          <MetricsChart data={metricsData.cadence} metricName='Cadence' />
+          <MetricsChart data={metricsData.cadence} metricName='Cadence' yLabel='Steps / minute' />
         </div>
         <img
           src='/external/rectangle71242-atv.svg'
@@ -113,7 +113,11 @@ const Desktop1 = props => {
           className='desktop1-rectangle71'
         />
         <div className='copspeedgraph'>
-          <MetricsChart data={metricsData.median_cop_speed} metricName='Median COP Speed' />
+          <MetricsChart
+            data={metricsData.median_cop_speed}
+            metricName='Median COP Speed'
+            yLabel='Speed [m/s]'
+          />
         </div>
         {/* Add more charts for other metrics if needed */}
         <div className='desktop1-group59'>
@@ -254,7 +258,11 @@ const Desktop1 = props => {
           className='desktop1-rectangle70'
         />
         <div className='stepvariabilitygraph'>
-          <MetricsChart data={metricsData.step_variability} metricName='Step Variability' />
+          <MetricsChart
+            data={metricsData.step_variability}
+            metricName='Variability'
+            yLabel='Variability'
+          />
         </div>
         <span className='desktop1-text097'>
           <span>Gait Variability</span>

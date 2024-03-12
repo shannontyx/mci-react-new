@@ -5,10 +5,10 @@ import { Chart, LinearScale, BarController, BarElement, Tooltip, Legend, TimeSca
 import { Bar } from 'react-chartjs-2'
 import { AdapterDateFns } from 'chartjs-adapter-date-fns' // If removed it breaks
 import annotationPlugin from 'chartjs-plugin-annotation'
-import { findMedian } from '../utils'
+import { calculateMedian } from '../utils'
 import { constants } from '../data/constants'
 
-const MetricsChart = ({ data, metricName, cohortMedian }) => {
+const MetricsChart = ({ data, metricName, yLabel }) => {
   Chart.register(
     LinearScale,
     BarController,
@@ -20,7 +20,9 @@ const MetricsChart = ({ data, metricName, cohortMedian }) => {
   )
 
   const constantObject = constants.find(item => item.name === metricName)
-  const subjectMedian = findMedian(Object.values(data))
+  console.log(data)
+  const subjectMedian = calculateMedian(Object.values(data))
+  console.log('🚀 ~ MetricsChart ~ subjectMedian:', subjectMedian)
 
   const chartData = {
     labels: Object.keys(data),
@@ -54,7 +56,7 @@ const MetricsChart = ({ data, metricName, cohortMedian }) => {
         max: Math.max(...Object.values(data)) * 1.5,
         title: {
           display: true,
-          text: metricName,
+          text: yLabel,
         },
       },
     },
@@ -69,18 +71,18 @@ const MetricsChart = ({ data, metricName, cohortMedian }) => {
             mode: 'horizontal',
             scaleID: 'y',
             value: constantObject.cohortMedian, // <----------------- The cohort median
-            borderColor: 'red',
-            borderWidth: 1,
-            borderDash: [5, 5],
+            borderColor: 'green',
+            borderWidth: 1.5,
+            borderDash: [10, 7],
           },
           line2: {
             type: 'line',
             mode: 'horizontal',
             scaleID: 'y',
             value: subjectMedian, // <----------------- The subject median
-            borderColor: 'green',
-            borderWidth: 1,
-            borderDash: [5, 5],
+            borderColor: 'blue',
+            borderWidth: 1.5,
+            borderDash: [10, 7],
           },
           area: {
             type: 'box',
