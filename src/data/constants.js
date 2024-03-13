@@ -6,7 +6,7 @@ export const constants = [
     cohortMedian: 1.39,
   },
   {
-    name: 'Step Variability',
+    name: 'Variability',
     borders: [0.0, 3.5],
     healthyArea: [0.38, 1.74],
     cohortMedian: 1.06,

@@ -1,4 +1,5 @@
 import React from 'react'
+import PieChart from './PieChart'
 
 const ActivitySummary = ({ daysActive, avgUse }) => {
   return (
@@ -62,6 +63,9 @@ const ActivitySummary = ({ daysActive, avgUse }) => {
         <span className='desktop1-text143'>
           <span>Time spend per activity</span>
         </span>
+        <div className='piechart'>
+          <PieChart />
+        </div>
         <span className='desktop1-text145'>
           <span>View Activity &gt;</span>
         </span>

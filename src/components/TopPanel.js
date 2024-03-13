@@ -43,11 +43,11 @@
 
 // export default TopPanel
 
-import React from 'react';
-import { useLocation } from 'react-router-dom'; // Import useLocation hook from React Router
+import React from 'react'
+import { useLocation } from 'react-router-dom' // Import useLocation hook from React Router
 
-const TopPanel = () => {
-  const location = useLocation(); // Get current location
+const TopPanel = ({ patientId }) => {
+  const location = useLocation() // Get current location
 
   // Check if the current URL path is '/dashboard'
   if (location.pathname === '/dashboard') {
@@ -64,7 +64,7 @@ const TopPanel = () => {
           <span>Subject X</span>
         </span>
         <span className='desktop1-text018'>
-          <span>0012345</span>
+          <span>{patientId}</span>
         </span>
         <span className='desktop1-text020'>
           <span>
@@ -88,18 +88,19 @@ const TopPanel = () => {
           <span>Generate report</span>
         </span>
       </div>
-    );
+    )
   } else {
     // If URL path is not '/dashboard', render 'My Patients' header only
     return (
       <div className='desktop1-header'>
-      <div>
-        <p style={{ fontSize: '25px', color: 'white', marginTop: '33px', marginLeft: '120px'}}>My Patients</p>
+        <div>
+          <p style={{ fontSize: '25px', color: 'white', marginTop: '33px', marginLeft: '120px' }}>
+            My Patients
+          </p>
+        </div>
       </div>
-      </div>
-      
-    );
+    )
   }
 }
 
-export default TopPanel;
+export default TopPanel

@@ -1,64 +1,63 @@
 .patient-table-container {
-    margin: 20px;
-  }
-  
-  .patient-table {
-    width: 90%;
-    border-collapse: collapse;
-  }
-  
-  .patient-table th,
-  .patient-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  .patient-table th {
-    background-color: #7ea2b8;
-    color: white;
-  }
-  
-  .patient-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  .view-dashboard-btn {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .view-dashboard-btn:hover {
-    background-color: #99b7cb;
-  }
+  margin: 20px;
+}
 
-  /* Conditional styling based on riskLevel */
+.patient-table {
+  width: 90%;
+  border-collapse: collapse;
+}
 
-  .patient-table tbody td:nth-child(1) {
-    width: 25%; /* Adjust the width as needed */
-  }
+.patient-table th,
+.patient-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
 
-  .patient-table tbody td:nth-child(2) {
-    width: 25%; /* Adjust the width as needed */
-  }
+.patient-table th {
+  background-color: #7ea2b8;
+  color: white;
+}
 
-  .patient-table tbody td:nth-child(3) {
-    width: 25%; /* Adjust the width as needed */
-    font-weight: bold;
-  }
+.patient-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
-  .patient-table tbody td:nth-child(4) {
-    width: 25%; /* Adjust the width as needed */
-  }
+.view-dashboard-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-  .patient-table tbody td:nth-child(3)[data-risklevel="Healthy"] {
-    color: green;
-  }
+.view-dashboard-btn:hover {
+  background-color: #99b7cb;
+}
 
-  .patient-table tbody td:nth-child(3)[data-risklevel="Unhealthy"] {
-    color: red;
-  }
-    
+/* Conditional styling based on riskLevel */
+
+.patient-table tbody td:nth-child(1) {
+  width: 25%; /* Adjust the width as needed */
+}
+
+.patient-table tbody td:nth-child(2) {
+  width: 25%; /* Adjust the width as needed */
+}
+
+.patient-table tbody td:nth-child(3) {
+  width: 25%; /* Adjust the width as needed */
+  font-weight: bold;
+}
+
+.patient-table tbody td:nth-child(4) {
+  width: 25%; /* Adjust the width as needed */
+}
+
+.patient-table tbody td:nth-child(3)[data-risklevel='Healthy'] {
+  color: green;
+}
+
+.patient-table tbody td:nth-child(3)[data-risklevel='MCI'] {
+  color: red;
+}
