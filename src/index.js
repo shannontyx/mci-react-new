@@ -5,6 +5,7 @@ import './style.css'
 import Desktop1 from './views/desktop1'
 import NotFound from './views/not-found'
 import PatientPage from './views/patients'
+import '@fortawesome/fontawesome-free/css/all.css';
 
 const App = () => {
   return (

@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { SidePanel, MetricsChart, ActivitySummary, TopPanel } from '../components' // Import Components
 import { Helmet } from 'react-helmet'
 import './desktop1.css'
 import * as utils from '../utils/helperFunctions'
+import '@fortawesome/fontawesome-free/css/all.css';
+
 
 const Desktop1 = props => {
   const { patientData } = props.location.state
@@ -14,6 +16,16 @@ const Desktop1 = props => {
   const medianVariability = utils.calculateMedian(metricsData.stride_variability)
   const medianCadence = utils.calculateMedian(metricsData.cadence)
   const medianSpeed = utils.calculateMedian(metricsData.median_cop_speed)
+
+  const [showInfoBox, setShowInfoBox] = useState(false);
+
+  const handleMouseEnter = () => {
+    setShowInfoBox(true);
+  }
+
+  const handleMouseLeave = () => {
+    setShowInfoBox(false);
+  }
 
   return (
     <div className='desktop1-container'>
@@ -46,13 +58,30 @@ const Desktop1 = props => {
           />
         </div>
         <div className='desktop1-group56'>
-          <img src='/external/line9225-zsym.svg' alt='Line9225' className='desktop1-line9' />
-          <img src='/external/line8226-kzek.svg' alt='Line8226' className='desktop1-line8' />
+          <span className='desktop1-line9' />
+          <span className='desktop1-line8' />
           <span className='desktop1-text030'>
             <span>Heathy cohort median</span>
           </span>
           <span className='desktop1-text032'>
             <span>Individual median</span>
+            <br/>
+            <br/>
+            <span
+                className="question-mark-icon"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                ? {/* Question mark icon */}
+              </span>
+              {showInfoBox && (
+                <div className="info-box"> {/* Bordered box */}
+                  <h4>Gait Time:</h4>
+                  <p>The healthy cohort generally has LOWER Gait Time compared to the unhealthy cohort. 
+                    Lower Gait Time signifies a more stable step and quicker completion of each step.</p>
+                </div>
+              )}
+
           </span>
         </div>
         <span className='desktop1-text034'>
@@ -64,16 +93,7 @@ const Desktop1 = props => {
           <br></br>
           <span>(time period)</span>
         </span>
-        <span className='desktop1-text041'>
-          <span>
-            <span
-              dangerouslySetInnerHTML={{
-                __html: ' ',
-              }}
-            />
-          </span>
-          <span className='desktop1-text043'>0.26 [s] higher than healthy cohort</span>
-        </span>
+       
         <span className='desktop1-text044'>
           <span>
             {/*<br></br>
@@ -81,19 +101,19 @@ const Desktop1 = props => {
           </span>
         </span>
         <div className='desktop1-group57'>
-          <img
+          {/* <img
             src='/external/lucidearrowup234-cfm.svg'
             alt='lucidearrowup234'
             className='desktop1-lucidearrowup'
-          />
-        </div>
-        <div className='desktop1-group58'>
+          /> */}
+        </div> 
+        {/* <div className='desktop1-group58'>
           <img
             src='/external/lucidearrowup237-p1pe.svg'
             alt='lucidearrowup237'
             className='desktop1-lucidearrowup1'
           />
-        </div>
+        </div> */}
         {/* --------------------------------- End Gait Time --------------------------------- */}
         <img src='/external/line11239-vk79.svg' alt='Line11239' className='desktop1-line11' />
         <span className='desktop1-text049'>
@@ -121,13 +141,29 @@ const Desktop1 = props => {
         </div>
         {/* Add more charts for other metrics if needed */}
         <div className='desktop1-group59'>
-          <img src='/external/line9244-145u.svg' alt='Line9244' className='desktop1-line91' />
-          <img src='/external/line8245-e3e.svg' alt='Line8245' className='desktop1-line81' />
+          <span className='desktop1-line91' />
+          <span className='desktop1-line81' />
           <span className='desktop1-text051'>
             <span>Heathy cohort median</span>
           </span>
           <span className='desktop1-text053'>
             <span>Individual median</span>
+            <br />
+            <br />
+            <span
+              className="question-mark-icon"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              ? {/* Question mark icon */}
+            </span>
+            {showInfoBox && (
+              <div className="info-box"> {/* Bordered box */}
+                <h4>Cadence:</h4>
+                <p>The healthy cohort generally has HIGHER Cadence compared to the less healthy cohort. 
+                  Higher Cadence indicates higher number of steps per minute, reflecting a more rapid and efficient walking pattern.</p>
+              </div>
+            )}
           </span>
         </div>
         <span className='desktop1-text055'>
@@ -165,7 +201,7 @@ const Desktop1 = props => {
               }}
             />
           </span>
-          <span className='desktop1-text071'>11 steps lower than healthy cohort</span>
+          {/* <span className='desktop1-text071'>11 steps lower than healthy cohort</span> */}
         </span>
         <span className='desktop1-text072'>
           <span>
@@ -174,7 +210,7 @@ const Desktop1 = props => {
             <span>(moving further from healthy cohort)</span>*/}
           </span>
         </span>
-        <div className='desktop1-group60'>
+        {/* <div className='desktop1-group60'>
           <img
             src='/external/lucidearrowup253-dby.svg'
             alt='lucidearrowup253'
@@ -187,19 +223,36 @@ const Desktop1 = props => {
             alt='lucidearrowup256'
             className='desktop1-lucidearrowup3'
           />
-        </div>
+        </div> */}
         <img src='/external/line15258-nkws.svg' alt='Line15258' className='desktop1-line15' />
         <span className='desktop1-text077'>
           <span>COP Speed</span>
         </span>
         <div className='desktop1-group62'>
-          <img src='/external/line9261-t6kf.svg' alt='Line9261' className='desktop1-line92' />
-          <img src='/external/line8262-f9y9.svg' alt='Line8262' className='desktop1-line82' />
+          <span className='desktop1-line92'></span>
+          <span className='desktop1-line82'></span>
           <span className='desktop1-text079'>
             <span>Heathy cohort median</span>
           </span>
           <span className='desktop1-text081'>
             <span>Individual median</span>
+            <br />
+            <br />
+            <span
+              className="question-mark-icon"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              ? {/* Question mark icon */}
+            </span>
+            {showInfoBox && (
+              <div className="info-box"> {/* Bordered box */}
+                <h4>COP Speed:</h4>
+                <p>TThe healthy cohort generally has HIGHER COP Speed compared to the less healthy cohort.
+                  Higher COP Speed signifies a faster and more dynamic gait, while lower COP Speed indicates a slower and more cautious walking pattern.
+                  </p>
+                  </div>
+            )}
           </span>
         </div>
         <span className='desktop1-text083'>
@@ -239,18 +292,8 @@ const Desktop1 = props => {
           </span>
             <span className='desktop1-text096'>Remained constant from previous period</span>*/}
         </span>
-        <div className='desktop1-group63'>
-          <img
-            src='/external/lucidearrowup270-lyop.svg'
-            alt='lucidearrowup270'
-            className='desktop1-lucidearrowup4'
-          />
-        </div>
-        <img
-          src='/external/ouitokenconstant272-rg6.svg'
-          alt='ouitokenconstant272'
-          className='desktop1-ouitokenconstant'
-        />
+        
+       
         <img src='/external/line17274-bf9r.svg' alt='Line17274' className='desktop1-line17' />
         <img
           src='/external/rectangle70275-xsps.svg'
@@ -268,18 +311,36 @@ const Desktop1 = props => {
           <span>Gait Variability</span>
         </span>
         <div className='desktop1-group64'>
-          <img src='/external/line9278-k0rf.svg' alt='Line9278' className='desktop1-line93' />
-          <img src='/external/line8279-51ry.svg' alt='Line8279' className='desktop1-line83' />
+          <span className='desktop1-line93' />
+          <span className='desktop1-line83' />
           <span className='desktop1-text099'>
             <span>Heathy cohort median</span>
           </span>
           <span className='desktop1-text101'>
             <span>Individual median</span>
+            <br/>
+            <br/>
+            <span
+              className="question-mark-icon"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              >
+                ?
+              </span>
+              {showInfoBox && (
+                <div className="info-box">
+                  <h4>Gait Variability</h4>
+                  <p>
+                  The healthy cohort generally has LOWER Gait Variability than the unhealthy cohort. 
+                  Lower Gait Variability suggests higher consistency with minimal variance in timing between steps. 
+                  </p>
+                </div>
+              )}
           </span>
         </div>
         <span className='desktop1-text103'>
           <span className='desktop1-text104'>{medianVariability.toFixed(2)}</span>
-          {/* <span className='desktop1-text105'>[m/s]</span> */}
+          <span className='desktop1-text105'>[m/s]</span>
         </span>
 
         <span className='desktop1-text110'>
@@ -304,7 +365,6 @@ const Desktop1 = props => {
               }}
             />
           </span>
-          <span className='desktop1-text121'>0.30 [m/s] higher than healthy cohort</span>
         </span>
         <span className='desktop1-text122'>
           <span>
@@ -313,20 +373,20 @@ const Desktop1 = props => {
             <span>(moving further from healthy cohort)</span>*/}
           </span>
         </span>
-        <div className='desktop1-group26'>
+        {/* <div className='desktop1-group26'>
           <img
             src='/external/lucidearrowup287-frng.svg'
             alt='lucidearrowup287'
             className='desktop1-lucidearrowup5'
           />
-        </div>
-        <div className='desktop1-group27'>
+        </div> */}
+        {/* <div className='desktop1-group27'>
           <img
             src='/external/lucidearrowup290-wy8.svg'
             alt='lucidearrowup290'
             className='desktop1-lucidearrowup6'
           />
-        </div>
+        </div> */}
         <img src='/external/line13292-a83q.svg' alt='Line13292' className='desktop1-line13' />
         <div className='desktop1-group40'>
           <span className='desktop1-text127'>

@@ -4,7 +4,7 @@ import { Pie } from 'react-chartjs-2'
 
 const PieChart = ({ data }) => {
   const chartData = {
-    labels: ['Active', 'Inactive'],
+    labels: ['Walking', 'Sit/Standing'],
     datasets: [
       {
         data: [20, 80],
@@ -21,19 +21,23 @@ const PieChart = ({ data }) => {
         position: 'right',
         labels: {
           font: {
-            size: 12, // Set the font size for the legend text
+            size: 8, // Set the font size for the legend text
           },
         },
+        padding: 20, // Set the padding to provide enough space for legend labels
       },
       tooltip: {
         bodyFont: {
-          size: 12, // Set the font size for the tooltip text
+          size: 8, // Set the font size for the tooltip text
         },
       },
     },
   }
 
-  return <Pie data={chartData} options={options} width={200} height={150} />
-}
+  return (
+    <div style={{ width: '200px' }}> {/* Adjust the width as needed */}
+      <Pie data={chartData} options={options} width={200} height={150} />
+    </div>
+  )}
 
 export default PieChart

@@ -1,5 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+.question-mark-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #058697;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  font-size: 19px;
+  color:#058697;
+}
+
+.info-box {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px); /* Position below the question mark icon */
+  left: -10px;
+  font-size: 10.3px;
+  background-color: #e9f3f7;
+  border: 2px solid rgb(38, 140, 173); /* Blue border */
+  padding: 10px;
+  border-radius: 5px;
+  width: 270px; /* Adjust as needed */
+  z-index: 9999; /* Ensure the info-box appears on top */
+}
+
+.desktop1-text032 {
+  position: relative;
+}
+
+.desktop1-text101 {
+  position: relative;
+}
+
+.question-mark-icon:hover + .info-box,
+.desktop1-text101:hover .info-box {
+  display: block;
+}
+
+
 .piechart {
   top: -30px;
   left: 60px;
@@ -153,7 +194,7 @@
   top: 49.080692291259766px;
   left: 330.26153564453125px;
   color: rgba(24, 81, 99, 1);
-  width: 141px;
+  width: 300px;
   height: auto;
   position: absolute;
   font-size: 16.472885131835938px;
@@ -273,20 +314,26 @@
   align-items: flex-start;
   flex-shrink: 1;
 }
-.desktop1-line9 {
-  left: -1px;
-  width: 15px;
-  bottom: -1px;
-  height: 9px;
-  position: absolute;
-}
+
+.desktop1-line9,
 .desktop1-line8 {
-  top: 1px;
-  left: -1px;
   width: 15px;
-  height: 10px;
+  height: 3px;
   position: absolute;
 }
+
+.desktop1-line9 {
+  left: 0px;
+  bottom: 2px;
+  background-color: blue;
+}
+
+.desktop1-line8 {
+  left: 0px;
+  top: 5px;
+  background-color: green;
+}
+
 .desktop1-text030 {
   top: -0.00009032108209794387px;
   left: 19.52707290649414px;
@@ -373,9 +420,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.desktop1-text043 {
-  font-size: 7px;
-}
+
 .desktop1-text044 {
   top: 515.0842895507812px;
   left: 964.970703125px;
@@ -473,19 +518,24 @@
   align-items: flex-start;
   flex-shrink: 1;
 }
-.desktop1-line91 {
-  left: 1px;
+
+.desktop1-line91,
+.desktop1-line81 {
   width: 15px;
-  bottom: -3px;
-  height: 13px;
+  height: 3px;
   position: absolute;
 }
+
+.desktop1-line91 {
+  left: 0px;
+  bottom: 2px;
+  background-color: blue;
+}
+
 .desktop1-line81 {
-  top: 2px;
-  left: 1px;
-  width: 15px;
-  height: 8px;
-  position: absolute;
+  left: 0px;
+  top: 5px;
+  background-color: green;
 }
 .desktop1-text051 {
   top: -0.000019843268091790378px;
@@ -620,40 +670,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.desktop1-group60 {
-  top: 1043.9072265625px;
-  left: 962.9988403320312px;
-  width: 16.890403747558594px;
-  height: 16.77825355529785px;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 1;
-}
-.desktop1-lucidearrowup2 {
-  top: -1px;
-  left: -2px;
-  width: 17px;
-  height: 17px;
-  position: absolute;
-}
-.desktop1-group61 {
-  top: 1060.32958984375px;
-  left: 963.2546997070312px;
-  width: 16.890403747558594px;
-  height: 16.77825355529785px;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 1;
-}
-.desktop1-lucidearrowup3 {
-  left: -2px;
-  width: 17px;
-  bottom: -2px;
-  height: 17px;
-  position: absolute;
-}
+
 .desktop1-line15 {
   top: 890.571044921875px;
   left: 952.6275024414062px;
@@ -687,19 +704,23 @@
   align-items: flex-start;
   flex-shrink: 1;
 }
-.desktop1-line92 {
-  left: 0px;
+.desktop1-line92,
+.desktop1-line82 {
   width: 15px;
-  bottom: -3px;
-  height: 13px;
+  height: 3px;
   position: absolute;
 }
-.desktop1-line82 {
-  top: -2px;
+
+.desktop1-line92 {
   left: 0px;
-  width: 15px;
-  height: 14px;
-  position: absolute;
+  bottom: 2px;
+  background-color: blue;
+}
+
+.desktop1-line82 {
+  left: 0px;
+  top: 5px;
+  background-color: green;
 }
 .desktop1-text079 {
   top: 0.00000848470790515421px;
@@ -876,19 +897,24 @@
   align-items: flex-start;
   flex-shrink: 1;
 }
-.desktop1-line93 {
-  left: -1px;
+
+.desktop1-line93,
+.desktop1-line83 {
   width: 15px;
-  bottom: -1px;
-  height: 11px;
+  height: 3px;
   position: absolute;
 }
+
+.desktop1-line93 {
+  left: 0px;
+  bottom: 2px;
+  background-color: blue;
+}
+
 .desktop1-line83 {
-  top: 0px;
-  left: -1px;
-  width: 15px;
-  height: 12px;
-  position: absolute;
+  left: 0px;
+  top: 5px;
+  background-color: green;
 }
 .desktop1-text099 {
   top: 0.00006650916475336999px;
@@ -1041,40 +1067,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.desktop1-group26 {
-  top: 782.5504760742188px;
-  left: 976.0810546875px;
-  width: 16.890403747558594px;
-  height: 16.77825355529785px;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 1;
-}
-.desktop1-lucidearrowup5 {
-  top: -16.490392885195888px;
-  left: -17.02379732763052px;
-  width: 17px;
-  height: 17px;
-  position: absolute;
-}
-.desktop1-group27 {
-  top: 799.9484252929688px;
-  left: 976.0089111328125px;
-  width: 16.890403747558594px;
-  height: 16.77825355529785px;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 1;
-}
-.desktop1-lucidearrowup6 {
-  top: -17.065628153308353px;
-  left: -16.446746481439845px;
-  width: 17px;
-  height: 17px;
-  position: absolute;
-}
+
 .desktop1-line13 {
   top: 622.2734375px;
   left: 950.0291137695312px;
