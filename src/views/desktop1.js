@@ -77,8 +77,7 @@ const Desktop1 = props => {
               {showInfoBox && (
                 <div className="info-box"> {/* Bordered box */}
                   <h4>Gait Time:</h4>
-                  <p>The healthy cohort generally has LOWER Gait Time compared to the unhealthy cohort. 
-                    Lower Gait Time signifies a more stable step and quicker completion of each step.</p>
+                  <p>Gait time refers to the duration of the gait cycle, which is the time taken to complete one stride. A higher gait time may indicate a slower walking speed, often associated with gait abnormalities or balance issues, while a lower gait time suggests a faster walking speed, which could indicate a healthier, more stable gait</p>
                 </div>
               )}
 
@@ -160,8 +159,7 @@ const Desktop1 = props => {
             {showInfoBox && (
               <div className="info-box"> {/* Bordered box */}
                 <h4>Cadence:</h4>
-                <p>The healthy cohort generally has HIGHER Cadence compared to the less healthy cohort. 
-                  Higher Cadence indicates higher number of steps per minute, reflecting a more rapid and efficient walking pattern.</p>
+                <p> Cadence refers to the number of steps taken per minute. A higher cadence is associated with a faster pace and is often indicative of a more efficient gait, while a lower cadence suggests a slower walking speed and can sometimes reflect gait impairments, or less stability.</p>
               </div>
             )}
           </span>
@@ -248,8 +246,7 @@ const Desktop1 = props => {
             {showInfoBox && (
               <div className="info-box"> {/* Bordered box */}
                 <h4>COP Speed:</h4>
-                <p>TThe healthy cohort generally has HIGHER COP Speed compared to the less healthy cohort.
-                  Higher COP Speed signifies a faster and more dynamic gait, while lower COP Speed indicates a slower and more cautious walking pattern.
+                <p>The center of pressure (COP) speed is the rate at which the COP travels across the sole during the stance phase of the gait cycle. Higher COP speed can reflect a more dynamic and potentially less stable gait, often seen in faster walking speeds, while lower COP speed may indicate a more controlled and stable gait, typically associated with slower walking speeds.
                   </p>
                   </div>
             )}
@@ -331,9 +328,7 @@ const Desktop1 = props => {
                 <div className="info-box">
                   <h4>Gait Variability</h4>
                   <p>
-                  The healthy cohort generally has LOWER Gait Variability than the unhealthy cohort. 
-                  Lower Gait Variability suggests higher consistency with minimal variance in timing between steps. 
-                  </p>
+                  Gait variability refers to the natural fluctuation in walking patterns, from one step to the next. Higher gait variability often indicates instability or irregularity in gait, while lower gait variability is generally indicative of a more stable and regular gait.</p>
                 </div>
               )}
           </span>
