@@ -4,7 +4,7 @@ import { Pie } from 'react-chartjs-2'
 
 const PieChart = ({ data }) => {
   const chartData = {
-    labels: ['Walking', 'Sit/Standing'],
+    labels: ['Walk', 'Sit/Stand'],
     datasets: [
       {
         data: [20, 80],
