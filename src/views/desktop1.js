@@ -43,7 +43,7 @@ const Desktop1 = props => {
         <ActivitySummary daysActive={`${daysActive} days`} avgUse={`${averagePerDay} min`} />
         {/* --------------------------------- Gait Time --------------------------------- */}
         <span className='desktop1-text028'>
-          <span>Gait Time</span>
+          <span>Daily Median Gait Time</span>
         </span>
         <img
           src='/external/rectangle65222-8o1j.svg'
@@ -116,7 +116,7 @@ const Desktop1 = props => {
         {/* --------------------------------- End Gait Time --------------------------------- */}
         <img src='/external/line11239-vk79.svg' alt='Line11239' className='desktop1-line11' />
         <span className='desktop1-text049'>
-          <span>Cadence</span>
+          <span>Daily Median Cadence</span>
         </span>
         <img
           src='/external/rectangle68241-acri.svg'
@@ -224,7 +224,7 @@ const Desktop1 = props => {
         </div> */}
         <img src='/external/line15258-nkws.svg' alt='Line15258' className='desktop1-line15' />
         <span className='desktop1-text077'>
-          <span>COP Speed</span>
+          <span>Daily Median COP Speed</span>
         </span>
         <div className='desktop1-group62'>
           <span className='desktop1-line92'></span>
@@ -305,7 +305,7 @@ const Desktop1 = props => {
           />
         </div>
         <span className='desktop1-text097'>
-          <span>Gait Variability</span>
+          <span>Daily Median Gait Variability</span>
         </span>
         <div className='desktop1-group64'>
           <span className='desktop1-line93' />
@@ -385,18 +385,18 @@ const Desktop1 = props => {
         <img src='/external/line13292-a83q.svg' alt='Line13292' className='desktop1-line13' />
         <div className='desktop1-group40'>
           <span className='desktop1-text127'>
-            <span>Subject X Daily Gait Variability</span>
+            {/* <span>Daily Gait Variability</span> */}
           </span>
         </div>
         <span className='desktop1-text129'>
-          <span>Subject X Daily Cadence</span>
+          {/* <span>Subject X Daily Cadence</span> */}
         </span>
         <span className='desktop1-text131'>
-          <span>Subject X Daily Median COP Speed</span>
+          {/* <span>Subject X Daily Median COP Speed</span> */}
         </span>
         <div className='desktop1-group'></div>
         <span className='desktop1-text133'>
-          <span>Subject X Gait Time Average Per Day</span>
+          {/* <span>Subject X Gait Time Average Per Day</span> */}
         </span>
 
         {/* ------------------------------------------------------------------------------------ */

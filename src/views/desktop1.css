@@ -49,28 +49,28 @@
 }
 
 .cadencegraph {
-  top: 915.547119140625px;
+  top: 903.547119140625px;
   left: 210px;
   position: absolute;
   z-index: 9999; /* Adjust the z-index value as needed */
 }
 
 .stepvariabilitygraph {
-  top: 633px;
+  top: 623px;
   left: 210px;
   position: absolute;
   z-index: 9999; /* Adjust the z-index value as needed */
 }
 
 .steptimegraph {
-  top: 363px;
+  top: 353px;
   left: 210px;
   position: absolute;
   z-index: 9999; /* Adjust the z-index value as needed */
 }
 
 .copspeedgraph {
-  top: 1200px;
+  top: 1189px;
   left: 210px;
   position: absolute;
   z-index: 9999; /* Adjust the z-index value as needed */
@@ -285,7 +285,7 @@
   top: 314.3483581542969px;
   left: 145.13626098632812px;
   color: rgba(0, 153, 201, 1);
-  width: 153px;
+  width: 300px;
   height: auto;
   position: absolute;
   font-size: 18.241626739501953px;
@@ -482,7 +482,7 @@
   top: 851.593017578125px;
   left: 147.73501586914062px;
   color: rgba(0, 153, 201, 1);
-  width: 153px;
+  width: 300px;
   height: auto;
   position: absolute;
   font-size: 18.241626739501953px;
@@ -682,7 +682,7 @@
   top: 1138.3389892578125px;
   left: 147.73501586914062px;
   color: rgba(0, 153, 201, 1);
-  width: 153px;
+  width: 300px;
   height: auto;
   position: absolute;
   font-size: 18.241626739501953px;
@@ -875,7 +875,7 @@
   top: 580.697265625px;
   left: 147.73501586914062px;
   color: rgba(0, 153, 201, 1);
-  width: 153px;
+  width: 300px;
   height: auto;
   position: absolute;
   font-size: 18.241626739501953px;
