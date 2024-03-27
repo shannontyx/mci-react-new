@@ -3,8 +3,7 @@ import { SidePanel, MetricsChart, ActivitySummary, TopPanel } from '../component
 import { Helmet } from 'react-helmet'
 import './desktop1.css'
 import * as utils from '../utils/helperFunctions'
-import '@fortawesome/fontawesome-free/css/all.css';
-
+import '@fortawesome/fontawesome-free/css/all.css'
 
 const Desktop1 = props => {
   const { patientData } = props.location.state
@@ -17,14 +16,14 @@ const Desktop1 = props => {
   const medianCadence = utils.calculateMedian(metricsData.cadence)
   const medianSpeed = utils.calculateMedian(metricsData.median_cop_speed)
 
-  const [showInfoBox, setShowInfoBox] = useState(false);
+  const [showInfoBox, setShowInfoBox] = useState(false)
 
   const handleMouseEnter = () => {
-    setShowInfoBox(true);
+    setShowInfoBox(true)
   }
 
   const handleMouseLeave = () => {
-    setShowInfoBox(false);
+    setShowInfoBox(false)
   }
 
   return (
@@ -65,22 +64,29 @@ const Desktop1 = props => {
           </span>
           <span className='desktop1-text032'>
             <span>Individual median</span>
-            <br/>
-            <br/>
+            <br />
+            <br />
             <span
-                className="question-mark-icon"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                ? {/* Question mark icon */}
-              </span>
-              {showInfoBox && (
-                <div className="info-box"> {/* Bordered box */}
-                  <h4>Gait Time:</h4>
-                  <p>Gait time refers to the duration of the gait cycle, which is the time taken to complete one stride. A higher gait time may indicate a slower walking speed, often associated with gait abnormalities or balance issues, while a lower gait time suggests a faster walking speed, which could indicate a healthier, more stable gait</p>
-                </div>
-              )}
-
+              className='question-mark-icon'
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              ? {/* Question mark icon */}
+            </span>
+            {showInfoBox && (
+              <div className='info-box'>
+                {' '}
+                {/* Bordered box */}
+                <h4>Gait Time:</h4>
+                <p>
+                  Gait time refers to the duration of the gait cycle, which is the time taken to
+                  complete one stride. A higher gait time may indicate a slower walking speed, often
+                  associated with gait abnormalities or balance issues, while a lower gait time
+                  suggests a faster walking speed, which could indicate a healthier, more stable
+                  gait
+                </p>
+              </div>
+            )}
           </span>
         </div>
         <span className='desktop1-text034'>
@@ -92,7 +98,7 @@ const Desktop1 = props => {
           <br></br>
           <span>(time period)</span>
         </span>
-       
+
         <span className='desktop1-text044'>
           <span>
             {/*<br></br>
@@ -105,7 +111,7 @@ const Desktop1 = props => {
             alt='lucidearrowup234'
             className='desktop1-lucidearrowup'
           /> */}
-        </div> 
+        </div>
         {/* <div className='desktop1-group58'>
           <img
             src='/external/lucidearrowup237-p1pe.svg'
@@ -150,16 +156,24 @@ const Desktop1 = props => {
             <br />
             <br />
             <span
-              className="question-mark-icon"
+              className='question-mark-icon'
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
               ? {/* Question mark icon */}
             </span>
             {showInfoBox && (
-              <div className="info-box"> {/* Bordered box */}
+              <div className='info-box'>
+                {' '}
+                {/* Bordered box */}
                 <h4>Cadence:</h4>
-                <p> Cadence refers to the number of steps taken per minute. A higher cadence is associated with a faster pace and is often indicative of a more efficient gait, while a lower cadence suggests a slower walking speed and can sometimes reflect gait impairments, or less stability.</p>
+                <p>
+                  {' '}
+                  Cadence refers to the number of steps taken per minute. A higher cadence is
+                  associated with a faster pace and is often indicative of a more efficient gait,
+                  while a lower cadence suggests a slower walking speed and can sometimes reflect
+                  gait impairments, or less stability.
+                </p>
               </div>
             )}
           </span>
@@ -237,18 +251,25 @@ const Desktop1 = props => {
             <br />
             <br />
             <span
-              className="question-mark-icon"
+              className='question-mark-icon'
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
               ? {/* Question mark icon */}
             </span>
             {showInfoBox && (
-              <div className="info-box"> {/* Bordered box */}
+              <div className='info-box'>
+                {' '}
+                {/* Bordered box */}
                 <h4>COP Speed:</h4>
-                <p>The center of pressure (COP) speed is the rate at which the COP travels across the sole during the stance phase of the gait cycle. Higher COP speed can reflect a more dynamic and potentially less stable gait, often seen in faster walking speeds, while lower COP speed may indicate a more controlled and stable gait, typically associated with slower walking speeds.
-                  </p>
-                  </div>
+                <p>
+                  The center of pressure (COP) speed is the rate at which the COP travels across the
+                  sole during the stance phase of the gait cycle. Higher COP speed can reflect a
+                  more dynamic and potentially less stable gait, often seen in faster walking
+                  speeds, while lower COP speed may indicate a more controlled and stable gait,
+                  typically associated with slower walking speeds.
+                </p>
+              </div>
             )}
           </span>
         </div>
@@ -289,8 +310,7 @@ const Desktop1 = props => {
           </span>
             <span className='desktop1-text096'>Remained constant from previous period</span>*/}
         </span>
-        
-       
+
         <img src='/external/line17274-bf9r.svg' alt='Line17274' className='desktop1-line17' />
         <img
           src='/external/rectangle70275-xsps.svg'
@@ -299,7 +319,7 @@ const Desktop1 = props => {
         />
         <div className='stepvariabilitygraph'>
           <MetricsChart
-            data={metricsData.step_variability}
+            data={metricsData.stride_variability}
             metricName='Variability'
             yLabel='Variability'
           />
@@ -315,22 +335,26 @@ const Desktop1 = props => {
           </span>
           <span className='desktop1-text101'>
             <span>Individual median</span>
-            <br/>
-            <br/>
+            <br />
+            <br />
             <span
-              className="question-mark-icon"
+              className='question-mark-icon'
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              >
-                ?
-              </span>
-              {showInfoBox && (
-                <div className="info-box">
-                  <h4>Gait Variability</h4>
-                  <p>
-                  Gait variability refers to the natural fluctuation in walking patterns, from one step to the next. Higher gait variability often indicates instability or irregularity in gait, while lower gait variability is generally indicative of a more stable and regular gait.</p>
-                </div>
-              )}
+            >
+              ?
+            </span>
+            {showInfoBox && (
+              <div className='info-box'>
+                <h4>Gait Variability</h4>
+                <p>
+                  Gait variability refers to the natural fluctuation in walking patterns, from one
+                  step to the next. Higher gait variability often indicates instability or
+                  irregularity in gait, while lower gait variability is generally indicative of a
+                  more stable and regular gait.
+                </p>
+              </div>
+            )}
           </span>
         </div>
         <span className='desktop1-text103'>
@@ -384,13 +408,9 @@ const Desktop1 = props => {
         </div> */}
         <img src='/external/line13292-a83q.svg' alt='Line13292' className='desktop1-line13' />
         <div className='desktop1-group40'>
-          <span className='desktop1-text127'>
-            {/* <span>Daily Gait Variability</span> */}
-          </span>
+          <span className='desktop1-text127'>{/* <span>Daily Gait Variability</span> */}</span>
         </div>
-        <span className='desktop1-text129'>
-          {/* <span>Subject X Daily Cadence</span> */}
-        </span>
+        <span className='desktop1-text129'>{/* <span>Subject X Daily Cadence</span> */}</span>
         <span className='desktop1-text131'>
           {/* <span>Subject X Daily Median COP Speed</span> */}
         </span>

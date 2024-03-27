@@ -1,12 +1,14 @@
 // patientsData.js
 import mci001 from './mci001.json'
 import mci002 from './mci002.json'
+import mci003 from './mci003.json'
 import mci004 from './mci004.json'
 import mci005 from './mci005.json'
 import mci006 from './mci006.json'
 import mci007 from './mci007.json'
 import mci008 from './mci008.json'
-// import mci010 from './mci010.json'
+import mci009 from './mci009.json'
+import mci010 from './mci010.json'
 
 const patientsData = [
   {
@@ -20,6 +22,12 @@ const patientsData = [
     gender: 'Male',
     riskLevel: 'Healthy',
     patientMetricsData: mci002,
+  },
+  {
+    id: 'mci003',
+    gender: 'Male',
+    riskLevel: 'Healthy',
+    patientMetricsData: mci003,
   },
   {
     id: 'mci004',
@@ -51,12 +59,18 @@ const patientsData = [
     riskLevel: 'Healthy',
     patientMetricsData: mci008,
   },
-  // {
-  //   id: 'mci010',
-  //   gender: 'Male',
-  //   riskLevel: 'Healthy',
-  //   patientMetricsData: mci010,
-  // },
+  {
+    id: 'mci009',
+    gender: 'Male',
+    riskLevel: 'Healthy',
+    patientMetricsData: mci009,
+  },
+  {
+    id: 'mci010',
+    gender: 'Male',
+    riskLevel: 'Healthy',
+    patientMetricsData: mci010,
+  },
 ]
 
 export default patientsData

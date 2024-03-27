@@ -2,25 +2,25 @@ export const constants = [
   {
     name: 'Gait Time',
     borders: [0.0, 3.0],
-    healthyArea: [1.12, 1.96],
-    cohortMedian: 1.54,
+    healthyArea: [1.69, 1.1],
+    cohortMedian: 1.39,
   },
   {
     name: 'Variability',
     borders: [0.0, 3.5],
-    healthyArea: [0.01, 1.47],
-    cohortMedian: 0.73,
+    healthyArea: [0.38, 1.74],
+    cohortMedian: 1.06,
   },
   {
     name: 'Cadence',
     borders: [40, 150],
-    healthyArea: [66.68, 93.54],
-    cohortMedian: 80.11,
+    healthyArea: [70.12, 106.37],
+    cohortMedian: 88.24,
   },
   {
     name: 'Median COP Speed',
     borders: [0.0, 3.0],
-    healthyArea: [0.85, 1.83],
-    cohortMedian: 1.34,
+    healthyArea: [0.86, 1.68],
+    cohortMedian: 1.27,
   },
 ]

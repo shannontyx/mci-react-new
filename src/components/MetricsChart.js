@@ -18,7 +18,7 @@ const MetricsChart = ({ data, metricName, yLabel }) => {
     TimeScale,
     annotationPlugin,
   )
-
+  const yLimit = Math.max(...Object.values(data)) * 1.5
   const constantObject = constants.find(item => item.name === metricName)
   console.log(data)
   const subjectMedian = calculateMedian(Object.values(data))
@@ -53,7 +53,7 @@ const MetricsChart = ({ data, metricName, yLabel }) => {
       },
       y: {
         min: Math.min(...Object.values(data)) * 1.5,
-        max: Math.max(...Object.values(data)) * 1.5,
+        max: yLimit < 2.5 ? 3 : yLimit,
         title: {
           display: true,
           text: yLabel,

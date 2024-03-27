@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 .question-mark-icon {
   display: inline-block;
   width: 30px;
@@ -10,7 +9,7 @@
   text-align: center;
   cursor: pointer;
   font-size: 19px;
-  color:#058697;
+  color: #058697;
 }
 
 .info-box {
@@ -39,7 +38,6 @@
 .desktop1-text101:hover .info-box {
   display: block;
 }
-
 
 .piechart {
   top: -30px;
@@ -952,7 +950,7 @@
   top: 693.0831298828125px;
   left: 981.86083984375px;
   color: rgb(53, 53, 53);
-  width: 136px;
+  width: 160px;
   height: auto;
   position: absolute;
   font-size: 38.9779px;
